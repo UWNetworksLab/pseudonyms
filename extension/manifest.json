@@ -1,0 +1,34 @@
+{
+  "name" : "IPMixer--Paper Version",
+  "version" : "0.1",
+  "description" : "Working implementation reflecting what in the paper",
+  "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*","proxy", "webRequest", "webRequestBlocking", "background"],
+  "icons": { "16": "icon.png", "48": "icon.png", "128": "icon.png" },
+  "options_page": "options.html",
+  //"browser_action": {
+  //  "default_icon": "icon.png"
+  //},
+  "page_action": {
+    "default_icon": "icon.png", // optional
+    "default_title": "show tabID",    // optional; shown in tooltip
+    "default_popup": "page_action.html"    // optional
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+  {
+	"matches": ["<all_urls>"],
+	"js":	   ["contentscript.js"],
+	"run_at":  "document_start",
+	"all_frames": true
+  },
+	{
+	"matches": ["<all_urls>"],
+	"js":	["detectlogin.js"],
+	"run_at": "document_end",
+	"all_frames":	true
+	}
+	],
+  "manifest_version": 2
+}

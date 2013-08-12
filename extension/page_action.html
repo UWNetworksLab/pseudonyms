@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Check Cookies</title>
+    <style>
+    </style>
+
+    <!-- JavaScript and HTML must be in separate files for security. -->
+    <script src="page_action.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+        Refresh();
+    </script>
+    <input type="button" onclick="Refresh()" value="Refresh" />
+
+    <p id="intro">Hello World!</p>
+
+    <script type="text/javascript">
+        x=document.getElementById("intro");
+        document.write(x.firstChild.nodeValue);
+    </script>
+  </body>
+</html>

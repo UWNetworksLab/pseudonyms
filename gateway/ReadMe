@@ -1,0 +1,6 @@
+[Compile]
+gcc -O -W -Wall -o gateway_service gateway_service.c -lcrypto
+strip gateway_service
+
+[Run]
+./gateway_service LocalAddrV4 IPv6_Interface IPv6_Prefix [port/8964] 
